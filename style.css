@@ -1,0 +1,59 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(180, 100%, 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.menu-bars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border: 3px solid white;
+}
+.menu-bars:hover{
+    cursor: pointer;
+}
+.menu-bars span{
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 5px;
+    background-color: aliceblue;
+}
+.menu-bars span::before, .menu-bars span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 70px;
+    height: 5px;
+    background-color: aliceblue;
+}
+.menu-bars span::before{
+    top: 20px;
+}
+.menu-bars span::after{
+  bottom: 20px;
+}
+/* CSS forming the X */
+#check:checked ~ label
+.menu-bars span::before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+#check:checked ~ label
+.menu-bars span::after{
+    transform: rotate(45deg);
+    top: 0;
+}
+#check:checked ~ label
+.menu-bars span{
+    background-color: transparent;
+}
